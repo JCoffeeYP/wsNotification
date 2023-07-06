@@ -66,5 +66,6 @@ func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/ws/{uuid:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}}", wsHandler)
 	go genChMsg()
+	// todo go ProcessMessages()
 	log.Fatal(http.ListenAndServe(*addr, r))
 }
